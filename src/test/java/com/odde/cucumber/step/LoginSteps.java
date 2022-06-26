@@ -34,6 +34,11 @@ public class LoginSteps {
         api.signUp(new User(email, password));
     }
 
+    @Given("signin with email {string} and password {string}")
+    public void signinWithEmailAndPassword(String email, String password) {
+        api.signIn(new User(email, password));
+    }
+
     @Then("login fail with message {string}")
     public void loginFailWithMessage(String message) {
         ui.assertHaveText(message);

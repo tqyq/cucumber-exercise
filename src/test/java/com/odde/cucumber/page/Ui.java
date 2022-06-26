@@ -14,7 +14,7 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Component
-@Scope(value="webDriver", proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Scope(value = "webDriver", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Ui {
 
     private final WebDriver driver;
@@ -43,6 +43,10 @@ public class Ui {
 
     public void open(String url) {
         driver.get(url);
+    }
+
+    public void maximize() {
+        driver.manage().window().maximize();
     }
 
     public void assertHaveText(String text) {
